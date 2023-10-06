@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="add_date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="display_string" attributeType="String"/>
+        <attribute name="identity_uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image_data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="release_date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="search_string" attributeType="String"/>
+        <attribute name="status_boolean" attributeType="Boolean" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="search_string"/>
+                <constraint value="release_date"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Property" representedClassName="Property" syncable="YES">
+        <attribute name="display_string" attributeType="String"/>
+        <attribute name="identity_uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="primary_enum" attributeType="String"/>
+        <attribute name="search_string" attributeType="String"/>
+        <attribute name="secondary_enum" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="primary_enum"/>
+                <constraint value="secondary_enum"/>
+                <constraint value="search_string"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Relation" representedClassName="Relation" syncable="YES">
+        <attribute name="game_uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="primary_property_uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="secondary_property_uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="game_uuid"/>
+                <constraint value="primary_property_uuid"/>
+                <constraint value="secondary_property_uuid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

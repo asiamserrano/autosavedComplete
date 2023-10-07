@@ -27,6 +27,20 @@
 		1ED158DF2AD0BBBA005CB7D3 /* Mode+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158DE2AD0BBBA005CB7D3 /* Mode+Enum.swift */; };
 		1ED158E12AD0BC07005CB7D3 /* Format+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158E02AD0BC07005CB7D3 /* Format+Enum.swift */; };
 		1ED158E42AD0C068005CB7D3 /* autosavedComplete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158E22AD0C068005CB7D3 /* autosavedComplete.xcdatamodeld */; };
+		1ED158ED2AD0C13B005CB7D3 /* Relation+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158E72AD0C13B005CB7D3 /* Relation+Class.swift */; };
+		1ED158EF2AD0C13B005CB7D3 /* Game+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158E92AD0C13B005CB7D3 /* Game+Class.swift */; };
+		1ED158F12AD0C13B005CB7D3 /* Property+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158EB2AD0C13B005CB7D3 /* Property+Class.swift */; };
+		1ED158F42AD0C44B005CB7D3 /* Format+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158F32AD0C44B005CB7D3 /* Format+Protocol.swift */; };
+		1ED158F62AD0C45C005CB7D3 /* Form+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158F52AD0C45C005CB7D3 /* Form+Enum.swift */; };
+		1ED158F82AD0C465005CB7D3 /* Digital+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158F72AD0C465005CB7D3 /* Digital+Enum.swift */; };
+		1ED158FA2AD0C46B005CB7D3 /* Physical+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158F92AD0C46B005CB7D3 /* Physical+Enum.swift */; };
+		1ED158FD2AD0C5F6005CB7D3 /* Property+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158FC2AD0C5F6005CB7D3 /* Property+Protocol.swift */; };
+		1ED159002AD0C897005CB7D3 /* Platform+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158FF2AD0C897005CB7D3 /* Platform+Enum.swift */; };
+		1ED159022AD0C89D005CB7D3 /* Family+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED159012AD0C89D005CB7D3 /* Family+Enum.swift */; };
+		1ED159042AD0C8A5005CB7D3 /* Nintendo+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED159032AD0C8A5005CB7D3 /* Nintendo+Enum.swift */; };
+		1ED159062AD0C8AB005CB7D3 /* PC+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED159052AD0C8AB005CB7D3 /* PC+Enum.swift */; };
+		1ED159082AD0C8B5005CB7D3 /* PlayStation+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED159072AD0C8B5005CB7D3 /* PlayStation+Enum.swift */; };
+		1ED1590A2AD0C8BD005CB7D3 /* Xbox+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED159092AD0C8BD005CB7D3 /* Xbox+Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +65,20 @@
 		1ED158DE2AD0BBBA005CB7D3 /* Mode+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mode+Enum.swift"; sourceTree = "<group>"; };
 		1ED158E02AD0BC07005CB7D3 /* Format+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Enum.swift"; sourceTree = "<group>"; };
 		1ED158E32AD0C068005CB7D3 /* autosavedComplete.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = autosavedComplete.xcdatamodel; sourceTree = "<group>"; };
+		1ED158E72AD0C13B005CB7D3 /* Relation+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Relation+Class.swift"; sourceTree = "<group>"; };
+		1ED158E92AD0C13B005CB7D3 /* Game+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+Class.swift"; sourceTree = "<group>"; };
+		1ED158EB2AD0C13B005CB7D3 /* Property+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+Class.swift"; sourceTree = "<group>"; };
+		1ED158F32AD0C44B005CB7D3 /* Format+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Protocol.swift"; sourceTree = "<group>"; };
+		1ED158F52AD0C45C005CB7D3 /* Form+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form+Enum.swift"; sourceTree = "<group>"; };
+		1ED158F72AD0C465005CB7D3 /* Digital+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Digital+Enum.swift"; sourceTree = "<group>"; };
+		1ED158F92AD0C46B005CB7D3 /* Physical+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Physical+Enum.swift"; sourceTree = "<group>"; };
+		1ED158FC2AD0C5F6005CB7D3 /* Property+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+Protocol.swift"; sourceTree = "<group>"; };
+		1ED158FF2AD0C897005CB7D3 /* Platform+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Platform+Enum.swift"; sourceTree = "<group>"; };
+		1ED159012AD0C89D005CB7D3 /* Family+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Family+Enum.swift"; sourceTree = "<group>"; };
+		1ED159032AD0C8A5005CB7D3 /* Nintendo+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nintendo+Enum.swift"; sourceTree = "<group>"; };
+		1ED159052AD0C8AB005CB7D3 /* PC+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PC+Enum.swift"; sourceTree = "<group>"; };
+		1ED159072AD0C8B5005CB7D3 /* PlayStation+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayStation+Enum.swift"; sourceTree = "<group>"; };
+		1ED159092AD0C8BD005CB7D3 /* Xbox+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xbox+Enum.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +111,7 @@
 		1ED158AD2AD09A83005CB7D3 /* autosavedComplete */ = {
 			isa = PBXGroup;
 			children = (
+				1ED158F22AD0C23A005CB7D3 /* Classes */,
 				1ED158AE2AD09A83005CB7D3 /* autosavedCompleteApp.swift */,
 				1ED158E52AD0C07F005CB7D3 /* CoreData */,
 				1ED158C62AD0B570005CB7D3 /* Enums */,
@@ -118,10 +147,11 @@
 		1ED158C62AD0B570005CB7D3 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				1ED158FE2AD0C88E005CB7D3 /* Platforms */,
 				1ED158C72AD0B581005CB7D3 /* Primary+Enum.swift */,
 				1ED158DC2AD0BB89005CB7D3 /* Input+Enum.swift */,
 				1ED158DE2AD0BBBA005CB7D3 /* Mode+Enum.swift */,
-				1ED158E02AD0BC07005CB7D3 /* Format+Enum.swift */,
+				1ED158FB2AD0C470005CB7D3 /* Formats */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -131,6 +161,8 @@
 			children = (
 				1ED158CA2AD0B59B005CB7D3 /* Identifiable+Protocol.swift */,
 				1ED158CC2AD0B5A6005CB7D3 /* Iterable+Protocol.swift */,
+				1ED158F32AD0C44B005CB7D3 /* Format+Protocol.swift */,
+				1ED158FC2AD0C5F6005CB7D3 /* Property+Protocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -161,6 +193,40 @@
 				1ED158E22AD0C068005CB7D3 /* autosavedComplete.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1ED158F22AD0C23A005CB7D3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1ED158E92AD0C13B005CB7D3 /* Game+Class.swift */,
+				1ED158EB2AD0C13B005CB7D3 /* Property+Class.swift */,
+				1ED158E72AD0C13B005CB7D3 /* Relation+Class.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1ED158FB2AD0C470005CB7D3 /* Formats */ = {
+			isa = PBXGroup;
+			children = (
+				1ED158E02AD0BC07005CB7D3 /* Format+Enum.swift */,
+				1ED158F52AD0C45C005CB7D3 /* Form+Enum.swift */,
+				1ED158F72AD0C465005CB7D3 /* Digital+Enum.swift */,
+				1ED158F92AD0C46B005CB7D3 /* Physical+Enum.swift */,
+			);
+			path = Formats;
+			sourceTree = "<group>";
+		};
+		1ED158FE2AD0C88E005CB7D3 /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				1ED158FF2AD0C897005CB7D3 /* Platform+Enum.swift */,
+				1ED159012AD0C89D005CB7D3 /* Family+Enum.swift */,
+				1ED159032AD0C8A5005CB7D3 /* Nintendo+Enum.swift */,
+				1ED159052AD0C8AB005CB7D3 /* PC+Enum.swift */,
+				1ED159072AD0C8B5005CB7D3 /* PlayStation+Enum.swift */,
+				1ED159092AD0C8BD005CB7D3 /* Xbox+Enum.swift */,
+			);
+			path = Platforms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,20 +302,34 @@
 				1ED158D42AD0B7A6005CB7D3 /* Italicized+Modifier.swift in Sources */,
 				1ED158C82AD0B581005CB7D3 /* Primary+Enum.swift in Sources */,
 				1ED158D92AD0B830005CB7D3 /* FormView.swift in Sources */,
+				1ED158F82AD0C465005CB7D3 /* Digital+Enum.swift in Sources */,
 				1ED158B82AD09A85005CB7D3 /* Persistence.swift in Sources */,
 				1ED158D72AD0B7CF005CB7D3 /* IconView.swift in Sources */,
+				1ED159022AD0C89D005CB7D3 /* Family+Enum.swift in Sources */,
+				1ED159082AD0C8B5005CB7D3 /* PlayStation+Enum.swift in Sources */,
+				1ED158EF2AD0C13B005CB7D3 /* Game+Class.swift in Sources */,
 				1ED158DB2AD0B846005CB7D3 /* Date+Extension.swift in Sources */,
+				1ED159042AD0C8A5005CB7D3 /* Nintendo+Enum.swift in Sources */,
+				1ED1590A2AD0C8BD005CB7D3 /* Xbox+Enum.swift in Sources */,
 				1ED158CF2AD0B781005CB7D3 /* View+Extension.swift in Sources */,
 				1ED158D22AD0B79B005CB7D3 /* Hide+Modifier.swift in Sources */,
 				1ED158C32AD09B37005CB7D3 /* Context+Extension.swift in Sources */,
+				1ED159062AD0C8AB005CB7D3 /* PC+Enum.swift in Sources */,
 				1ED158E42AD0C068005CB7D3 /* autosavedComplete.xcdatamodeld in Sources */,
+				1ED158ED2AD0C13B005CB7D3 /* Relation+Class.swift in Sources */,
 				1ED158E12AD0BC07005CB7D3 /* Format+Enum.swift in Sources */,
 				1ED158CB2AD0B59B005CB7D3 /* Identifiable+Protocol.swift in Sources */,
 				1ED158DF2AD0BBBA005CB7D3 /* Mode+Enum.swift in Sources */,
 				1ED158B12AD09A83005CB7D3 /* ContentView.swift in Sources */,
 				1ED158DD2AD0BB89005CB7D3 /* Input+Enum.swift in Sources */,
+				1ED158FA2AD0C46B005CB7D3 /* Physical+Enum.swift in Sources */,
 				1ED158AF2AD09A83005CB7D3 /* autosavedCompleteApp.swift in Sources */,
+				1ED158F42AD0C44B005CB7D3 /* Format+Protocol.swift in Sources */,
+				1ED158F62AD0C45C005CB7D3 /* Form+Enum.swift in Sources */,
 				1ED158C52AD0A3C0005CB7D3 /* String+Extension.swift in Sources */,
+				1ED158FD2AD0C5F6005CB7D3 /* Property+Protocol.swift in Sources */,
+				1ED158F12AD0C13B005CB7D3 /* Property+Class.swift in Sources */,
+				1ED159002AD0C897005CB7D3 /* Platform+Enum.swift in Sources */,
 				1ED158CD2AD0B5A6005CB7D3 /* Iterable+Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

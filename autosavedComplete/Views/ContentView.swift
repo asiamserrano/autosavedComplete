@@ -17,31 +17,41 @@ struct ContentView: View {
 //        animation: .default)
 //    private var items: FetchedResults<Item>
     
-    private var primaries: [PrimaryEnum] {
-        [.mode, .platform, .format, .input]
-    }
+    /*
+     public var formEnum: FormEnum {
+         self.child.formEnum
+     }
 
+     public var key: String {
+         self.child.key
+     }
+
+     public var search: String {
+         self.child.search
+     }
+
+     public var display: String {
+         self.child.display
+     }
+
+     public var icon: String {
+         self.child.icon
+     }
+     */
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(self.primaries) { item in
+                    ForEach(FormatEnum.all) { item in
                         VStack(alignment: .leading) {
-                            FormView("key", item.key)
-                            FormView("search", item.search)
-                            FormView("display", item.display)
+                            FormView("primary_enum", item.primary)
+                            FormView("secondary_enum", item.secondary)
+                            FormView("search_string", item.search)
+                            FormView("display_string", item.display)
                         }
                     }
                 }
-                Section {
-                    ForEach(ModeEnum.all) { item in
-                        VStack(alignment: .leading) {
-                            FormView("key", item.key)
-                            FormView("search", item.search)
-                            FormView("display", item.display)
-                        }
-                    }
-                }
+                
             }
         }
     }

@@ -11,47 +11,47 @@ import CoreData
 struct ContentView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
     
-    /*
-     public var formEnum: FormEnum {
-         self.child.formEnum
-     }
+    @FetchRequest( sortDescriptors: [])
+    private var properties: FetchedResults<Property>
+    
+    @FetchRequest(sortDescriptors: [])
+    private var games: FetchedResults<Game>
+    
+    @FetchRequest(sortDescriptors: [])
+    private var relations: FetchedResults<Relation>
 
-     public var key: String {
-         self.child.key
-     }
-
-     public var search: String {
-         self.child.search
-     }
-
-     public var display: String {
-         self.child.display
-     }
-
-     public var icon: String {
-         self.child.icon
-     }
-     */
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(FormatEnum.all) { item in
-                        VStack(alignment: .leading) {
-                            FormView("primary_enum", item.primary)
-                            FormView("secondary_enum", item.secondary)
-                            FormView("search_string", item.search)
-                            FormView("display_string", item.display)
-                        }
-                    }
+                    FormView("# of games", self.games.count)
+                    FormView("# of properties", self.properties.count)
+                    FormView("# of relations", self.relations.count)
+//                    ForEach(self.games, id:\.self) { game in
+//                        VStack(alignment: .leading) {
+//                            FormView("display", game.display_string)
+//                            FormView("release", game.release_date!)
+//                            FormView("identity", game.identity_uuid!)
+//                        }
+//                    }
                 }
-                
+//                Section {
+//                    ForEach(self.properties, id:\.self) { prop in
+//
+//                        NavigationLink(destination: { TestPropertyView(property: prop) }, label: {
+//                            Text(prop.identity.uuidString.canonicalized)
+//                        })
+////                        let item: PropertyBuilder = prop.builder
+////                        VStack(alignment: .leading) {
+////                            FormView("identity_uuid", item.identity)
+////                            FormView("primary_enum", item.get(.primary))
+////                            FormView("secondary_enum", item.get(.secondary))
+////                            FormView("search_string", item.get(.search))
+////                            FormView("display_string", item.get(.display))
+////                        }
+//                    }
+//                }
             }
         }
     }

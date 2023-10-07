@@ -9,11 +9,19 @@ import Foundation
 
 public protocol PropertyProtocol: IdentifiableProtocol {
     
-//    var primaryEnum: PrimaryEnum { get }
+    var primaryEnum: PrimaryEnum { get }
     
-    var primary: String { get }
-    var secondary: String { get }
-    var search: String { get }
-    var display: String { get }
-    
+    func get(_ v: Property.Variable) -> String?
+        
 }
+
+//public protocol PropertyProtocol: IdentifiableProtocol {
+//
+////    var primaryEnum: PrimaryEnum { get }
+//
+//    var primary: String { get }
+//    var secondary: String { get }
+//    var search: String { get }
+//    var display: String { get }
+//
+//}

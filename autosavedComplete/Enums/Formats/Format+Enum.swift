@@ -19,11 +19,11 @@ public enum FormatEnum {
     case digital(DigitalEnum)
     case physical(PhysicalEnum)
     
-    init?(_ strA: String?, _ strB: String?) {
-        if let f: FormEnum = .init(strA) {
+    init?(_ formEn: String?, _ formatEn: String?) {
+        if let f: FormEnum = .init(formEn) {
             switch f {
-            case .digital: self.init(digital: strB)
-            case .physical: self.init(physical: strB)
+            case .digital: self.init(digital: formatEn)
+            case .physical: self.init(physical: formatEn)
             }
         } else { return nil }
     }
@@ -62,24 +62,24 @@ extension FormatEnum: PropertyProtocol {
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.className)
-        hasher.combine(self.child.className)
-        hasher.combine(self.child.key)
+        hasher.combine(self.child)
     }
     
-    public var primary: String {
-        self.child.primaryEnum.key
+    public var primaryEnum: PrimaryEnum { self.child.primaryEnum }
+    
+    public func get(_ v: Property.Variable) -> String? {
+        switch v {
+        case .identity: return nil
+        case .primary: return self.primaryEnum.key
+        case .secondary: return self.child.formEnum.key
+        case .search: return self.child.search
+        case .display: return self.child.display
+        }
     }
     
-    public var secondary: String {
-        self.child.formEnum.key
-    }
-    
-    public var search: String {
-        self.child.search
-    }
-    
-    public var display: String {
-        self.child.display
-    }
+//    public var primary: String { self.child.primaryEnum.key }
+//    public var secondary: String { self.child.formEnum.key }
+//    public var search: String { self.child.search }
+//    public var display: String { self.child.display }
     
 }

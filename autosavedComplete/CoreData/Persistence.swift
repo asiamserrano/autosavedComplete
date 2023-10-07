@@ -10,10 +10,39 @@ import CoreData
 struct PersistenceController {
     
     static let shared = PersistenceController()
+    
+    static var randomPropertyEnum: PropertyEnum {
+        switch PrimaryEnum.random {
+        case .input: return .input(.random)
+        case .mode: return .mode(.random)
+        default: return .platform(.random, .random)
+        }
+    }
+    
+    static var propertyBuilders: [PropertyBuilder] {
+        [
+            InputBuilder(.series, "Grand Theft Auto"),
+            ModeBuilder(.single),
+            FormatBuilder(.digital(.nintendo)),
+            FormatBuilder(.physical(.cartridge)),
+            PlatformBuilder(.playstation(.ps3)),
+            PlatformBuilder(.pc(.mac))
+        ]
+    }
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        
+        let max: Int = 10
+        
+        for _ in 0..<max {
+            let builder: GameBuilder = .init()
+                .withDisplay(.random)
+                .withRelease(.random)
+            viewContext.buildGame(builder, [randomPropertyEnum])
+        }
+        
        
         return result
     }()

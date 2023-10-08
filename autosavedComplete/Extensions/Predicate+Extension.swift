@@ -21,12 +21,12 @@ extension NSCompoundPredicate {
         return .init(andPredicateWithSubpredicates: keys.map { .init($0, builder.get($0), .equal) } )
     }
     
-//    public static func queryForGame(_ builder: GameBuilder) -> Self {
-//        .init(andPredicateWithSubpredicates: [
-//            .init(.raw, builder.title.canonicalized, .equal),
-//            .init(.release, builder.release, .equal)
-//        ] )
-//    }
+    public static func queryForGame(_ builder: GameBuilder) -> Self {
+        .init(andPredicateWithSubpredicates: [
+            .init(.search, builder.search, .equal),
+            .init(.release, builder.released, .equal)
+        ] )
+    }
     
     public static func andPredicate(_ arr: [NSPredicate]) -> Self {
         Self.init(andPredicateWithSubpredicates: arr)
@@ -36,8 +36,24 @@ extension NSCompoundPredicate {
 
 extension NSPredicate {
     
+    public convenience init(_ v: Game.Variable, _ dt: Date, _ pred: PredicateEnum) {
+        self.init(format: "\(v.rawValue) \(pred.rawValue) %@", dt as NSDate)
+    }
+    
+    public convenience init(_ v: Game.Variable, _ string: String, _ pred: PredicateEnum) {
+        self.init(v.rawValue, string, pred)
+    }
+    
     public convenience init(_ v: Property.Variable, _ string: String?, _ pred: PredicateEnum) {
         self.init(v.rawValue, string, pred)
+    }
+    
+    public convenience init(_ v: Property.Variable, _ uuid: UUID, _ pred: PredicateEnum) {
+        self.init(v.rawValue, uuid, pred)
+    }
+    
+    public convenience init(_ v: Relation.Variable, _ uuid: UUID, _ pred: PredicateEnum) {
+        self.init(v.rawValue, uuid.uuidString, pred)
     }
     
     public convenience init(_ v: String, _ uuid: UUID, _ pred: PredicateEnum) {

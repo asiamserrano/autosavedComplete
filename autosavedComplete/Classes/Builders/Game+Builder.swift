@@ -11,32 +11,37 @@ import CoreData
 public class GameBuilder {
     
     public private (set) var identity: UUID = .init()
-    public private (set) var add: Date = .today
+    public private (set) var added: Date = .today
         
-    public var display: String = .empty
-    public var release: Date = .today
+    public var title: String = .empty
+    public var released: Date = .today
     public var status: Bool = true
     public var image: Data? = nil
     
     public init() { }
     
     public init(_ game: Game) {
-        self.identity = .init(game.identity_uuid)
-        self.add = game.add_date ?? .today
-        self.display = game.display_string ?? .empty
-        self.release = game.release_date ?? .today
-        self.status = game.status_boolean
-        self.image = game.image_data
+        self.identity = game.identity
+        self.added = game.added
+        self.title = game.display
+        self.released = game.released
+        self.status = game.status
+        self.image = game.image
     }
     
-}
-
-extension GameBuilder {
+    public func equals(_ other: GameBuilder) -> Bool {
+        self.display == other.display
+        && self.released.dashless == other.released.dashless
+        && self.image == other.image
+    }
     
-//    @discardableResult
-//    public func build(_ con: Context) -> Game {
-//        .init(context: con).update(con, self)
-//    }
+    public var search: String {
+        self.display.canonicalized
+    }
+    
+    public var display: String {
+        self.title.trimmed
+    }
     
 }
 
@@ -49,20 +54,20 @@ extension GameBuilder {
     }
     
     @discardableResult
-    public func withDisplay(_ str: String?) -> Self {
-        self.display = str?.trimmed ?? .empty
+    public func withTitle(_ str: String?) -> Self {
+        self.title = str?.trimmed ?? .empty
         return self
     }
     
     @discardableResult
     public func withRelease(_ dt: Date?) -> Self {
-        self.release = .init(dt ?? .today)
+        self.released = .init(dt ?? .today)
         return self
     }
     
     @discardableResult
     public func withAddDate(_ dt: Date?) -> Self {
-        self.add = .init(dt ?? .today)
+        self.added = .init(dt ?? .today)
         return self
     }
     

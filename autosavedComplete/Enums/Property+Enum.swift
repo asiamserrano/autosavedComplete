@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+
+public typealias PropertyBuilderTuple = (PropertyBuilder, PropertyBuilder?)
 
 public enum PropertyEnum: IdentifiableProtocol {
     
@@ -13,11 +16,11 @@ public enum PropertyEnum: IdentifiableProtocol {
     case mode(ModeBuilder)
     case platform(PlatformBuilder, FormatBuilder)
     
-    public var builders: [PropertyBuilder] {
+    public var builders: (PropertyBuilder, PropertyBuilder?) {
         switch self {
-        case .input(let i): return [i]
-        case .mode(let m): return [m]
-        case .platform(let p, let f): return [p, f]
+        case .input(let i): return (i, nil)
+        case .mode(let m): return (m, nil)
+        case .platform(let p, let f): return (p, f)
         }
     }
     

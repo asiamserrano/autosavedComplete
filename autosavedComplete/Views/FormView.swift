@@ -10,15 +10,19 @@ import SwiftUI
 struct FormView: View {
     
     let header: String
-    let message: String?
+    let message: String
     
-    init(_ header: String, _ message: String?) {
-        self.header = header
-        self.message = message
+    init(_ header: String?, _ message: String?) {
+        self.header = header ?? "null"
+        self.message = message ?? .empty
     }
     
-    init(_ header: String, _ message: UUID) {
-        self.init(header, message.uuidString)
+    init(_ header: String, _ message: UUID?) {
+        self.init(header, message?.uuidString)
+    }
+    
+    init(_ header: String, _ message: Data?) {
+        self.init("\(header)?", message != nil)
     }
     
     init(_ header: String, _ message: Int) {
@@ -43,7 +47,7 @@ struct FormView: View {
         HStack(alignment: .center) {
             Text(self.header)
             Spacer()
-            Text(self.message.toString)
+            Text(self.message)
         }
     }
 }

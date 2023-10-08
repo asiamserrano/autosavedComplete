@@ -12,6 +12,23 @@ import CoreData
 @objc(Game)
 public final class Game: NSManagedObject {
     
+    public var identity: UUID {
+        let uuid: UUID = .init(self.identity_uuid)
+        self.identity_uuid = uuid
+        return uuid
+    }
+    
+    public var alertString: String {
+        "\(self.display) (\(self.released.year))"
+    }
+    
+    public var search: String { self.search_string ?? .empty }
+    public var display: String { self.display_string ?? .empty }
+    public var released: Date { self.release_date ?? .today }
+    public var added: Date { self.add_date ?? .today }
+    public var status: Bool { self.status_boolean }
+    public var image: Data? { self.image_data }
+    
 }
 
 extension Game {
@@ -20,13 +37,13 @@ extension Game {
         return NSFetchRequest<Game>(entityName: "Game")
     }
 
-    @NSManaged public private (set) var identity_uuid: UUID?
-    @NSManaged public private (set) var search_string: String?
-    @NSManaged public private (set) var display_string: String?
-    @NSManaged public private (set) var release_date: Date?
-    @NSManaged public private (set) var add_date: Date?
-    @NSManaged public private (set) var status_boolean: Bool
-    @NSManaged public private (set) var image_data: Data?
+    @NSManaged private var identity_uuid: UUID?
+    @NSManaged private var search_string: String?
+    @NSManaged private var display_string: String?
+    @NSManaged private var release_date: Date?
+    @NSManaged private var add_date: Date?
+    @NSManaged private var status_boolean: Bool
+    @NSManaged private var image_data: Data?
 
 }
 
@@ -43,10 +60,10 @@ extension Game : Identifiable {
     
     public func update(_ con: Context, _ builder: GameBuilder) -> Game {
         self.identity_uuid = builder.identity
-        self.search_string = builder.display.canonicalized
-        self.display_string = builder.display.trimmed
-        self.release_date = builder.release
-        self.add_date = builder.add
+        self.search_string = builder.search
+        self.display_string = builder.display
+        self.release_date = builder.released
+        self.add_date = builder.added
         self.status_boolean = builder.status
         self.image_data = builder.image
         con.store()

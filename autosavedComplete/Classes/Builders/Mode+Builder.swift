@@ -16,8 +16,7 @@ public struct ModeBuilder: BuilderProtocol {
     }
 
     public private (set) var identity: UUID
-    
-    var modeEnum: ModeEnum
+    private var modeEnum: ModeEnum
     
     public init(_ m: ModeEnum) {
         self.identity = .init()

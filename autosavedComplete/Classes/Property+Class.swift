@@ -57,7 +57,7 @@ extension Property : PropertyProtocol {
     
     public func get(_ v: Variable) -> String? {
         switch v {
-        case .identity: return self.identity_uuid?.uuidString
+        case .identity: return self.identity.uuidString
         case .primary: return self.primary_enum
         case .secondary: return self.secondary_enum
         case .search: return self.search_string

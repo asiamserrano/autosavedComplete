@@ -34,13 +34,16 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         
-        let max: Int = 10
+        var randomProperties: [PropertyEnum] = []
+        while randomProperties.count < 10 { randomProperties.append(randomPropertyEnum) }
         
+        let max: Int = 50
+
         for _ in 0..<max {
             let builder: GameBuilder = .init()
-                .withDisplay(.random)
+                .withTitle(.random)
                 .withRelease(.random)
-            viewContext.buildGame(builder, [randomPropertyEnum])
+            viewContext.buildGame(builder, [randomProperties.randomElement()!])
         }
         
        

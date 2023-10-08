@@ -47,7 +47,7 @@ struct GameView: GameModifiableProtocol, View {
     }
     
     private var properties: [PropertyEnum] {
-        self.viewContext.fetchProperties(self.relations)
+        self.viewContext.getPropertyEnums(self.relations)
     }
 
     var body: some View {

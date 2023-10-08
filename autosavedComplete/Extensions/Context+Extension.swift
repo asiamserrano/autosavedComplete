@@ -45,32 +45,13 @@ extension Context {
         self.store()
         return game
     }
-    
-//    @discardableResult
-//    private func buildRelation(_ g: GameBuilder, _ b1: PropertyBuilder, _ b2: PropertyBuilder? = nil) -> Relation {
-//        let relation: Relation = .init(context: self).update(g.identity, b1.identity, b2?.identity)
-//        self.store()
-//        return relation
-//    }
-    
-//    private func buildRelation(_ g: GameBuilder, _ property: PropertyEnum) -> Relation {
-//        let builders: [PropertyBuilder] = property.builders
-////        let first: PropertyBuilder = builders[0]
-//        return buildRelation(g, first, builders.last)
-////        return builders.count == 1 ? buildRelation(g, first) : buildRelation(g, first, builders[1])
-//    }
-    
-//    private func buildRelation(_ g: GameBuilder, _ builders: [PropertyBuilder]) -> Relation {
-//        let first: PropertyBuilder = builders[0]
-//        return builders.count == 1 ? buildRelation(g, first) : buildRelation(g, first, builders[1])
-//    }
-    
+ 
 }
 
 extension Context {
 
     @discardableResult
-    public func buildGame(_ builder: GameBuilder, _ enums: [PropertyEnum] = []) -> Game {
+    public func createGame(_ builder: GameBuilder, _ enums: [PropertyEnum] = []) -> Game {
         let game: Game = .init(context: self).update(self, builder)
         return self.buildRelations(game, enums)
     }
@@ -84,7 +65,7 @@ extension Context {
      }
      
      @discardableResult
-     func fetchGame(_ builder: GameBuilder) -> Game? {
+     func queryGame(_ builder: GameBuilder) -> Game? {
          let predicate: NSCompoundPredicate = .queryForGame(builder)
          return self.fetchGames(predicate).first ?? nil
      }
@@ -101,7 +82,7 @@ extension Context {
     }
     
     @discardableResult
-    public func fetchProperties(_ relations: FetchedResults<Relation>) -> [PropertyEnum] {
+    public func getPropertyEnums(_ relations: FetchedResults<Relation>) -> [PropertyEnum] {
         let properties: [(Property?, Property?)] = relations.map(self.fetchProperties)
         return properties.map { tuple in
             let primary: Property = tuple.0!
@@ -112,10 +93,6 @@ extension Context {
                     return .mode(.init(primary))
                 } else { return .input(.init(primary)) }
             }
-//            if let primary: Property = tuple.0 {
-//
-//            }
-//            fatalError("primary is not found: \(String(describing: tuple))")
         }
     }
     

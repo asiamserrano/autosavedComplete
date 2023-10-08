@@ -6,5 +6,8 @@
 //
 
 import Foundation
-
-
+//<<<<<<< HEAD
+//
+//
+//=======
+//>>>>>>> 968abb03b5275c367fa0511a0ba4aee6f8cf4971

@@ -31,15 +31,6 @@ struct ContentView: View {
             }, label: {
                 GameListView(game)
             })
-//            VStack(alignment: .leading) {
-//                FormView("identity_uuid", game.identity)
-//                FormView("search_string", game.search)
-//                FormView("display_string", game.display)
-//                FormView("release_date", game.released)
-//                FormView("add_date", game.added)
-//                FormView("status_boolean", game.status)
-//                FormView("image_data", game.image)
-//            }
         }
     }
     
@@ -102,13 +93,12 @@ struct ContentView: View {
                 
             }
             .id(self.listUUID)
-//            .onAppear(perform: self.refresh)
         }
     }
     
-    public func refresh() -> Void {
-        self.listUUID = .init()
-    }
+//    public func refresh() -> Void {
+//        self.listUUID = .init()
+//    }
     
 }
 

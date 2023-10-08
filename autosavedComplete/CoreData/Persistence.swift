@@ -43,7 +43,7 @@ struct PersistenceController {
             let builder: GameBuilder = .init()
                 .withTitle(.random)
                 .withRelease(.random)
-            viewContext.buildGame(builder, [randomProperties.randomElement()!])
+            viewContext.createGame(builder, [randomProperties.randomElement()!])
         }
         
        

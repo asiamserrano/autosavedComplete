@@ -30,9 +30,8 @@ extension Context {
     
     @discardableResult
     private func buildRelation(_ g: UUID, _ prop: PropertyEnum) -> Relation {
-        let builders: PropertyBuilderTuple = prop.builders
-        let primary: UUID = self.fetchProperty(builders.0).identity
-        let secondary: UUID? = self.fetchProperty(builders.1)?.identity
+        let primary: UUID = self.fetchProperty(prop.mainBuilder).identity
+        let secondary: UUID? = self.fetchProperty(prop.subBuilder)?.identity
         let relation: Relation = .init(context: self).update(g, primary, secondary)
         self.store()
         return relation
@@ -82,7 +81,7 @@ extension Context {
     }
     
     @discardableResult
-    public func getPropertyEnums(_ relations: FetchedResults<Relation>) -> [PropertyEnum] {
+    public func getPropertiesByRelations(_ relations: FetchedResults<Relation>) -> [PropertyEnum] {
         let properties: [(Property?, Property?)] = relations.map(self.fetchProperties)
         return properties.map { tuple in
             let primary: Property = tuple.0!

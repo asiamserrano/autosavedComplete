@@ -7,6 +7,16 @@
 
 import Foundation
 
+extension Array where Element: IterableProtocol {
+    
+    public func getValues() -> Self { self.sorted() }
+    
+    public func remove(_ index: Int) -> Self {
+        self.filter { $0 != self.getValues()[index] }
+    }
+    
+}
+
 public protocol IterableProtocol: IdentifiableProtocol, CaseIterable, Comparable {
 
     var key: String { get } // always will be saved as either primary or secondary enum for property

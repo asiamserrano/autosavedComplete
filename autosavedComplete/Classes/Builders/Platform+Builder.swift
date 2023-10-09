@@ -16,7 +16,7 @@ public struct PlatformBuilder: BuilderProtocol {
     }
 
     public private (set) var identity: UUID
-    private var platformEnum: PlatformEnum
+    public private (set) var platformEnum: PlatformEnum
     
     public init(_ p: PlatformEnum) {
         self.identity = .init()

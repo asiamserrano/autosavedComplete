@@ -1,26 +1,24 @@
 //
-//  GameView.swift
+//  GameDetailView.swift
 //  autosavedComplete
 //
-//  Created by Asia Serrano on 10/7/23.
+//  Created by Asia Serrano on 10/8/23.
 //
 
 import SwiftUI
 
-struct GameView: GameModifiableProtocol, View {
+struct GameDetailView: GameModifiableProtocol {
     
     @Environment(\.managedObjectContext) public var viewContext
     @Environment(\.presentationMode) public var presentationMode
     
-    @FetchRequest var relations: FetchedResults<Relation>
-
-//    @StateObject var dict: PropertyDictionary = .init()
+    @StateObject var collection: PropertyCollection = .init()
 //    @StateObject var alertObj: AlertObject = .init()
 
-    @State var editMode: EditMode = .active
-    @State var title: String = .init()
-    @State var released: Date = .today
-    @State var image: Data? = nil
+    @State var editMode: EditMode
+    @State var title: String
+    @State var released: Date
+    @State var image: Data?
     
 //    @State var close: Bool = false
     
@@ -28,34 +26,24 @@ struct GameView: GameModifiableProtocol, View {
     
     let status: Bool
     
-    init(_ builder: GameBuilder? = nil, _ s: Bool = true, _ pred: NSPredicate? = nil) {
-        _relations = FetchRequest<Relation>(sortDescriptors: [], predicate: pred)
+    init(_ builder: GameBuilder?, _ s: Bool, _ props: [PropertyEnum]) {
         self.status = s
         self._old = .init(wrappedValue: builder)
-    }
-
-    init(_ game: Game) { self.init(.init(game)) }
-
-    init(_ game: GameBuilder) {
-//        print(String(describing: NSPredicate(.game, game.identity, .equal)))
-//        self.init(game, game.status)
-        self.init(game, game.status, .init(.game, game.identity, .equal))
-        self._editMode = .init(wrappedValue: .inactive)
-        self._title = .init(wrappedValue: game.title)
-        self._released = .init(wrappedValue: game.released)
-        self._image = .init(wrappedValue: game.image)
+//        self._collection = .init(wrappedValue: .init())
+        self._collection = .init(wrappedValue: .init(props))
+        self._editMode = .init(wrappedValue: builder == nil ? .active : .inactive)
+        self._title = .init(wrappedValue: builder?.title ?? .empty)
+        self._released = .init(wrappedValue: builder?.released ?? .today)
+        self._image = .init(wrappedValue: builder?.image)
     }
     
-    private var properties: [PropertyEnum] {
-        self.viewContext.getPropertyEnums(self.relations)
-    }
-
     var body: some View {
         Form {
-            FormView("# or relations", self.relations.count)
 //            if let b: GameBuilder = self.old {
 //                FormView("properties count", b.builders.count)
 //            }
+            FormView("properties count", self.collection.count)
+            
             Section {
                 if self.editing {
                     ClearableTextField($title)
@@ -71,25 +59,12 @@ struct GameView: GameModifiableProtocol, View {
                 }
             }
             
-            
             Section {
-                ForEach(self.properties, id:\.self, content: { propEnum in
-                    PropertyEnumView(propEnum)
-                })
+                ForEach(self.collection.allEnums) {
+                    PropertyEnumView($0)
+                }
             }
             
-//            Section {
-//                ForEach(self.properties, id:\.self) { item in
-//                    VStack(alignment: .leading) {
-//                        FormView("identity_uuid", item.identity)
-//                        FormView("primary_enum", item.get(.primary))
-//                        FormView("secondary_enum", item.get(.secondary))
-//                        FormView("search_string", item.get(.search))
-//                        FormView("display_string", item.get(.display))
-//                    }
-//                }
-//            }
-
 //            ForEach(self.inputEnums, id:\.self) { InputsView($0, $editMode, dict) }
 //            ModesView($editMode, dict)
 //            PlatformsView($editMode, dict)
@@ -133,10 +108,9 @@ struct GameView: GameModifiableProtocol, View {
             FormView("display_string", item.get(.display))
         }
     }
-
 }
 
-extension GameView {
+extension GameDetailView {
     
     var new: GameBuilder {
         .init()

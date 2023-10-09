@@ -12,6 +12,10 @@ import CoreData
 @objc(Property)
 public final class Property: NSManagedObject {
     
+    public static var DisplayKeyPath: KeyPath<Property, String?> {
+        \Self.display_string
+    }
+    
     public var primaryEnum: PrimaryEnum {
         .init(self.primary_enum)!
     }
@@ -64,5 +68,5 @@ extension Property : PropertyProtocol {
         self.display_string = builder.get(.display)
         return self
     }
-
+    
 }

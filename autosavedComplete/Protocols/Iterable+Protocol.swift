@@ -15,6 +15,10 @@ extension Array where Element: IterableProtocol {
         self.filter { $0 != self.getValues()[index] }
     }
     
+    public func equals(_ other: Self) -> Bool {
+        self.getValues() == other.getValues()
+    }
+    
 }
 
 public protocol IterableProtocol: IdentifiableProtocol, CaseIterable, Comparable {

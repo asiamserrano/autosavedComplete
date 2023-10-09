@@ -19,17 +19,15 @@ struct GameDetailView: GameModifiableProtocol {
     @State var title: String
     @State var released: Date
     @State var image: Data?
+    @State var old: GameBuilder?
     
 //    @State var close: Bool = false
-    
-    @State var old: GameBuilder? = nil
     
     let status: Bool
     
     init(_ builder: GameBuilder?, _ s: Bool, _ props: [PropertyEnum]) {
         self.status = s
         self._old = .init(wrappedValue: builder)
-//        self._collection = .init(wrappedValue: .init())
         self._collection = .init(wrappedValue: .init(props))
         self._editMode = .init(wrappedValue: builder == nil ? .active : .inactive)
         self._title = .init(wrappedValue: builder?.title ?? .empty)
@@ -39,9 +37,6 @@ struct GameDetailView: GameModifiableProtocol {
     
     var body: some View {
         Form {
-//            if let b: GameBuilder = self.old {
-//                FormView("properties count", b.builders.count)
-//            }
             FormView("properties count", self.collection.count)
             
             Section {
@@ -53,19 +48,19 @@ struct GameDetailView: GameModifiableProtocol {
                 } else {
                     FormView("Title", self.title)
                     FormView("Release", self.released.long)
-//                    if let s: String = self.series {
-//                        FormView(InputEnum.series.value, s)
-//                    }
+                    if let s: String = self.series {
+                        FormView(InputEnum.series.display, s)
+                    }
                 }
             }
             
-            Section {
-                ForEach(self.collection.allEnums) {
-                    PropertyEnumView($0)
-                }
-            }
+//            Section {
+//                ForEach(self.collection.allEnums) {
+//                    PropertyEnumView($0)
+//                }
+//            }
             
-//            ForEach(self.inputEnums, id:\.self) { InputsView($0, $editMode, dict) }
+            ForEach(self.inputEnums, id:\.self) { InputPropertiesView($0, $editMode, collection) }
 //            ModesView($editMode, dict)
 //            PlatformsView($editMode, dict)
 
@@ -84,6 +79,11 @@ struct GameDetailView: GameModifiableProtocol {
 //                Button(self.buttonName, action: self.buttonAction)
 //                    .disabled(self.isDoneDisabled)
 //            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(self.buttonName, action: self.toggleEdit)
+//                    .disabled(self.isDoneDisabled)
+            }
         }
 
     }

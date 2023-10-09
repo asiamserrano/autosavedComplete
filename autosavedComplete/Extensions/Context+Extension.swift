@@ -48,11 +48,16 @@ extension Context {
 }
 
 extension Context {
+    
+    @discardableResult
+    public func createGame(_ builder: GameBuilder, _ col: PropertyCollection) -> Game {
+        self.createGame(builder, col.allEnums)
+    }
 
     @discardableResult
-    public func createGame(_ builder: GameBuilder, _ enums: [PropertyEnum] = []) -> Game {
+    public func createGame(_ builder: GameBuilder, _ properties: [PropertyEnum]) -> Game {
         let game: Game = .init(context: self).update(self, builder)
-        return self.buildRelations(game, enums)
+        return self.buildRelations(game, properties)
     }
     
     @discardableResult
@@ -123,15 +128,65 @@ extension Context {
     
     @discardableResult
     public func fetchProperty(_ builder: PropertyBuilder) -> Property {
-        let predicate: NSCompoundPredicate = .queryForProperty(builder)
-        if let property: Property = self.fetchProperties(predicate).first {
+        if let property: Property = self.queryProperty(builder) {
             return property
         } else {
             let property: Property = .init(context: self).set(builder)
             self.store()
             return property
         }
+    }
+    
+    @discardableResult
+    public func queryProperty(_ builder: PropertyBuilder) -> Property? {
+        let predicate: NSCompoundPredicate = .queryForProperty(builder)
+        if let property: Property = self.fetchProperties(predicate).first {
+            return property
+        } else { return nil }
+    }
+    
+//    @discardableResult
+//    public func fetchProperty(_ string: String) -> Property? {
+//        let str: String = string.trimmed
+//        if !str.isEmpty {
+//            
+//        }
+//        
+//        return nil
+//        
+////        let predicate: NSCompoundPredicate = .queryForProperty(builder)
+////        if let property: Property = self.fetchProperties(predicate).first {
+////            return property
+////        } else {
+////            let property: Property = .init(context: self).set(builder)
+////            self.store()
+////            return property
+////        }
+//        
+//    }
+    
+    @discardableResult
+    func fetchProperties(_ i: InputEnum, _ str: Binding<String>) -> [Property] {
+        let canon: String = str.wrappedValue.canonicalized
+        let count: Int = canon.count
+        let p1: NSPredicate = .init(.secondary, i.key, .equal)
+
+        var predicate2: NSPredicate? {
+            switch count {
+            case 0: return nil
+            case 1: return .init(.search, canon, .begin)
+            default: return .init(.search, canon, .contain)
+            }
+        }
         
+        var predicate: NSPredicate {
+            if let p2: NSPredicate = predicate2 {
+                return NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
+            } else { return p1 }
+        }
+        
+        let sort: [NSSortDescriptor] = [.init(keyPath: Property.DisplayKeyPath, ascending: true)]
+        return self.fetchProperties(predicate, sort)
     }
 
 }

@@ -18,21 +18,25 @@ public class GameBuilder {
     public var status: Bool = true
     public var image: Data? = nil
     
+    public var properties: PropertyCollection = .init()
+    
     public init() { }
     
-    public init(_ game: Game) {
+    public init(_ game: Game) { //}, _ col: PropertyCollection) {
         self.identity = game.identity
         self.added = game.added
         self.title = game.display
         self.released = game.released
         self.status = game.status
         self.image = game.image
+//        self.properties = col
     }
     
     public func equals(_ other: GameBuilder) -> Bool {
         self.display == other.display
         && self.released.dashless == other.released.dashless
         && self.image == other.image
+//        && self.properties == other.properties
     }
     
     public var search: String {
@@ -82,6 +86,17 @@ extension GameBuilder {
         self.image = i
         return self
     }
+    
+//    @discardableResult
+//    public func withProperties(_ p: PropertyCollection) -> Self {
+//        self.properties = p
+//        return self
+//    }
+//    
+//    @discardableResult
+//    public func withProperties(_ p: [PropertyEnum]) -> Self {
+//        self.withProperties(.init(p))
+//    }
     
 }
 

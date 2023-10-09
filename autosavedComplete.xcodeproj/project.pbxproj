@@ -23,6 +23,7 @@
 		1EA9C4332AD34FA2004FC832 /* PlatformCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4322AD34FA2004FC832 /* PlatformCollection+Extension.swift */; };
 		1EA9C4352AD350E5004FC832 /* FormatCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4342AD350E5004FC832 /* FormatCollection+Extension.swift */; };
 		1EA9C4392AD36C26004FC832 /* ModeCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4382AD36C26004FC832 /* ModeCollection+Extension.swift */; };
+		1EA9C43D2AD45F28004FC832 /* PropertyModifiable+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C43C2AD45F28004FC832 /* PropertyModifiable+Protocol.swift */; };
 		1ED158AF2AD09A83005CB7D3 /* autosavedCompleteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158AE2AD09A83005CB7D3 /* autosavedCompleteApp.swift */; };
 		1ED158B12AD09A83005CB7D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158B02AD09A83005CB7D3 /* ContentView.swift */; };
 		1ED158B32AD09A85005CB7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED158B22AD09A85005CB7D3 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		1EA9C4322AD34FA2004FC832 /* PlatformCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlatformCollection+Extension.swift"; sourceTree = "<group>"; };
 		1EA9C4342AD350E5004FC832 /* FormatCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatCollection+Extension.swift"; sourceTree = "<group>"; };
 		1EA9C4382AD36C26004FC832 /* ModeCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModeCollection+Extension.swift"; sourceTree = "<group>"; };
+		1EA9C43C2AD45F28004FC832 /* PropertyModifiable+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyModifiable+Protocol.swift"; sourceTree = "<group>"; };
 		1ED158AB2AD09A83005CB7D3 /* autosavedComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autosavedComplete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED158AE2AD09A83005CB7D3 /* autosavedCompleteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autosavedCompleteApp.swift; sourceTree = "<group>"; };
 		1ED158B02AD09A83005CB7D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1E7B46E22AD1E32B0012AB85 /* GameModifiable+Protocol.swift */,
+				1EA9C43C2AD45F28004FC832 /* PropertyModifiable+Protocol.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				1ED158EF2AD0C13B005CB7D3 /* Game+Class.swift in Sources */,
 				1EA9C4312AD349C2004FC832 /* StringCollection+Extension.swift in Sources */,
 				62F266022AD12C2200D0C74B /* Property+Enum.swift in Sources */,
+				1EA9C43D2AD45F28004FC832 /* PropertyModifiable+Protocol.swift in Sources */,
 				1ED158DB2AD0B846005CB7D3 /* Date+Extension.swift in Sources */,
 				1ED159042AD0C8A5005CB7D3 /* Nintendo+Enum.swift in Sources */,
 				1ED1590A2AD0C8BD005CB7D3 /* Xbox+Enum.swift in Sources */,

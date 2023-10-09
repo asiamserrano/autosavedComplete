@@ -50,6 +50,17 @@ extension InputCollection {
     
     func isEmpty(_ i: Key) -> Bool { self.getValues(i).isEmpty }
     
+    func equals(_ other: Self) -> Bool {
+        if self.getKeys() == other.getKeys() {
+            for input in InputEnum.all {
+                let a: Value = self.getValues(input)
+                let b: Value = other.getValues(input)
+                if !a.equals(b) { return false }
+            }
+            return true
+        } else { return false }
+    }
+    
     var isEmpty: Bool { self.getKeys().isEmpty }
     
     var count: Int { self.getKeys().map { self.getValues($0).count }.reduce(0, +) }

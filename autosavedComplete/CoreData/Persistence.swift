@@ -35,15 +35,22 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         
         var randomProperties: [PropertyEnum] = []
-        while randomProperties.count < 10 { randomProperties.append(randomPropertyEnum) }
+        while randomProperties.count < 25 { randomProperties.append(randomPropertyEnum) }
         
-        let max: Int = 50
+        let max: Int = 10
 
-        for _ in 0..<max {
+        for x in 0..<max {
             let builder: GameBuilder = .init()
                 .withTitle(.random)
                 .withRelease(.random)
-            viewContext.createGame(builder, [randomProperties.randomElement()!])
+            var props: [PropertyEnum] = []
+            while props.count < 3 {
+                let rand: PropertyEnum = randomProperties.randomElement()!
+                if !InputEnum.series.key.equals(rand.mainBuilder.get(.secondary)) {
+                    props.append(.input(.random))
+                }
+            }
+            viewContext.createGame(builder, props)
         }
         
        

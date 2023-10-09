@@ -26,6 +26,11 @@ extension StringCollection {
     public func getKeys() -> [Key] { self.keys.sorted() }
 
     public func getValues() -> [String] { self.values.sorted() }
+    
+    public func equals(_ other: Self) -> Bool {
+        self.getKeys() == other.getKeys()
+    }
         
     var isEmpty: Bool { self.getKeys().isEmpty }
+    
 }

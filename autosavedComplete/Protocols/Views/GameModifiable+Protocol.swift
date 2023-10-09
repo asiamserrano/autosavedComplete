@@ -32,6 +32,14 @@ extension GameModifiableProtocol {
     var editing: Bool { self.editMode.isEditing }
     var adding: Bool { self.old == nil }
     
+    var series: String? {
+        self.collection.getValues(.series).first
+    }
+    
+    var inputEnums: [InputEnum] {
+        InputEnum.all.filter { $0 == .series ? self.editing : true }
+    }
+    
 //    var series: String? {
 //        self.properties.first(where: { property in
 //            if let input: InputBuilder = property.builders.0 as? InputBuilder {
@@ -40,11 +48,8 @@ extension GameModifiableProtocol {
 //        })
 //    }
     
-    //    var inputEnums: [InputEnum] {
-    //        InputEnum.all.filter { $0 == .series ? self.editing : true }
-    //    }
-    
-    //    var buttonName: String { self.editing ? "Done" : "Edit" }
+
+    var buttonName: String { self.editing ? "Done" : "Edit" }
     
     //    var isDoneDisabled: Bool {
     //        if self.editing {

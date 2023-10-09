@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public protocol GameModifiableProtocol {
+public protocol GameModifiableProtocol: View {
     
     var editMode: EditMode { get set }
     var old: GameBuilder? { get set }
@@ -17,6 +17,7 @@ public protocol GameModifiableProtocol {
     var new: GameBuilder { get }
     var status: Bool { get }
     var title: String { get }
+    var collection: PropertyCollection { get }
 //    var buttonName: String { get }
 //    
 //    func toggleEdit() -> Void
@@ -30,6 +31,15 @@ extension GameModifiableProtocol {
     
     var editing: Bool { self.editMode.isEditing }
     var adding: Bool { self.old == nil }
+    
+//    var series: String? {
+//        self.properties.first(where: { property in
+//            if let input: InputBuilder = property.builders.0 as? InputBuilder {
+//                return input.isInput(.series)
+//            }
+//        })
+//    }
+    
     //    var inputEnums: [InputEnum] {
     //        InputEnum.all.filter { $0 == .series ? self.editing : true }
     //    }

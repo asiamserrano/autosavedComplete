@@ -12,6 +12,17 @@
 		1E7B46E02AD1E2C70012AB85 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B46DF2AD1E2C70012AB85 /* GameView.swift */; };
 		1E7B46E32AD1E32B0012AB85 /* GameModifiable+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B46E22AD1E32B0012AB85 /* GameModifiable+Protocol.swift */; };
 		1E7B46E52AD1E8600012AB85 /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B46E42AD1E8600012AB85 /* GameListView.swift */; };
+		1EA9C4162AD2EC0B004FC832 /* Property+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4152AD2EC0B004FC832 /* Property+Collection.swift */; };
+		1EA9C41C2AD30432004FC832 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C41B2AD30432004FC832 /* GameDetailView.swift */; };
+		1EA9C41E2AD305F5004FC832 /* Collection+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C41D2AD305F5004FC832 /* Collection+Protocol.swift */; };
+		1EA9C4212AD32412004FC832 /* Property+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4202AD32412004FC832 /* Property+Builder.swift */; };
+		1EA9C4262AD34588004FC832 /* AddInputPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4252AD34588004FC832 /* AddInputPropertyView.swift */; };
+		1EA9C42A2AD346AC004FC832 /* InputPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4292AD346AC004FC832 /* InputPropertiesView.swift */; };
+		1EA9C42F2AD34869004FC832 /* InputCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C42E2AD34869004FC832 /* InputCollection+Extension.swift */; };
+		1EA9C4312AD349C2004FC832 /* StringCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4302AD349C2004FC832 /* StringCollection+Extension.swift */; };
+		1EA9C4332AD34FA2004FC832 /* PlatformCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4322AD34FA2004FC832 /* PlatformCollection+Extension.swift */; };
+		1EA9C4352AD350E5004FC832 /* FormatCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4342AD350E5004FC832 /* FormatCollection+Extension.swift */; };
+		1EA9C4392AD36C26004FC832 /* ModeCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9C4382AD36C26004FC832 /* ModeCollection+Extension.swift */; };
 		1ED158AF2AD09A83005CB7D3 /* autosavedCompleteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158AE2AD09A83005CB7D3 /* autosavedCompleteApp.swift */; };
 		1ED158B12AD09A83005CB7D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED158B02AD09A83005CB7D3 /* ContentView.swift */; };
 		1ED158B32AD09A85005CB7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED158B22AD09A85005CB7D3 /* Assets.xcassets */; };
@@ -65,6 +76,17 @@
 		1E7B46DF2AD1E2C70012AB85 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1E7B46E22AD1E32B0012AB85 /* GameModifiable+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModifiable+Protocol.swift"; sourceTree = "<group>"; };
 		1E7B46E42AD1E8600012AB85 /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
+		1EA9C4152AD2EC0B004FC832 /* Property+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+Collection.swift"; sourceTree = "<group>"; };
+		1EA9C41B2AD30432004FC832 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		1EA9C41D2AD305F5004FC832 /* Collection+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Protocol.swift"; sourceTree = "<group>"; };
+		1EA9C4202AD32412004FC832 /* Property+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+Builder.swift"; sourceTree = "<group>"; };
+		1EA9C4252AD34588004FC832 /* AddInputPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInputPropertyView.swift; sourceTree = "<group>"; };
+		1EA9C4292AD346AC004FC832 /* InputPropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPropertiesView.swift; sourceTree = "<group>"; };
+		1EA9C42E2AD34869004FC832 /* InputCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputCollection+Extension.swift"; sourceTree = "<group>"; };
+		1EA9C4302AD349C2004FC832 /* StringCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringCollection+Extension.swift"; sourceTree = "<group>"; };
+		1EA9C4322AD34FA2004FC832 /* PlatformCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlatformCollection+Extension.swift"; sourceTree = "<group>"; };
+		1EA9C4342AD350E5004FC832 /* FormatCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatCollection+Extension.swift"; sourceTree = "<group>"; };
+		1EA9C4382AD36C26004FC832 /* ModeCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModeCollection+Extension.swift"; sourceTree = "<group>"; };
 		1ED158AB2AD09A83005CB7D3 /* autosavedComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autosavedComplete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED158AE2AD09A83005CB7D3 /* autosavedCompleteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autosavedCompleteApp.swift; sourceTree = "<group>"; };
 		1ED158B02AD09A83005CB7D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +154,46 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1EA9C4242AD3457D004FC832 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				1E7B46DF2AD1E2C70012AB85 /* GameView.swift */,
+				1EA9C41B2AD30432004FC832 /* GameDetailView.swift */,
+				1E7B46E42AD1E8600012AB85 /* GameListView.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		1EA9C4272AD34606004FC832 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				1EA9C4292AD346AC004FC832 /* InputPropertiesView.swift */,
+				1EA9C4252AD34588004FC832 /* AddInputPropertyView.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		1EA9C4282AD34647004FC832 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1ED158D62AD0B7CF005CB7D3 /* IconView.swift */,
+				1ED158D82AD0B830005CB7D3 /* FormView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		1EA9C42B2AD3480C004FC832 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				1EA9C4302AD349C2004FC832 /* StringCollection+Extension.swift */,
+				1EA9C42E2AD34869004FC832 /* InputCollection+Extension.swift */,
+				1EA9C4322AD34FA2004FC832 /* PlatformCollection+Extension.swift */,
+				1EA9C4342AD350E5004FC832 /* FormatCollection+Extension.swift */,
+				1EA9C4382AD36C26004FC832 /* ModeCollection+Extension.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
 		1ED158A22AD09A83005CB7D3 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +238,7 @@
 		1ED158C12AD09B2E005CB7D3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1EA9C42B2AD3480C004FC832 /* Collections */,
 				1ED158C22AD09B37005CB7D3 /* Context+Extension.swift */,
 				1ED158C42AD0A3C0005CB7D3 /* String+Extension.swift */,
 				1ED158CE2AD0B781005CB7D3 /* View+Extension.swift */,
@@ -211,6 +274,7 @@
 				62F265EC2AD0F99900D0C74B /* Platform+Protocol.swift */,
 				62F265F72AD104CC00D0C74B /* Builder+Protocol.swift */,
 				1E7B46DD2AD1DC060012AB85 /* Game+Protocol.swift */,
+				1EA9C41D2AD305F5004FC832 /* Collection+Protocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -228,11 +292,10 @@
 			isa = PBXGroup;
 			children = (
 				1ED158B02AD09A83005CB7D3 /* ContentView.swift */,
-				1ED158D62AD0B7CF005CB7D3 /* IconView.swift */,
-				1ED158D82AD0B830005CB7D3 /* FormView.swift */,
+				1EA9C4272AD34606004FC832 /* Properties */,
+				1EA9C4242AD3457D004FC832 /* Games */,
+				1EA9C4282AD34647004FC832 /* Utility */,
 				62F265FD2AD1135D00D0C74B /* TestPropertyView.swift */,
-				1E7B46DF2AD1E2C70012AB85 /* GameView.swift */,
-				1E7B46E42AD1E8600012AB85 /* GameListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +316,7 @@
 				1ED158E92AD0C13B005CB7D3 /* Game+Class.swift */,
 				1ED158EB2AD0C13B005CB7D3 /* Property+Class.swift */,
 				1ED158E72AD0C13B005CB7D3 /* Relation+Class.swift */,
+				1EA9C4152AD2EC0B004FC832 /* Property+Collection.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -284,6 +348,7 @@
 		62F265EE2AD1049600D0C74B /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				1EA9C4202AD32412004FC832 /* Property+Builder.swift */,
 				62F265EF2AD104A100D0C74B /* Input+Builder.swift */,
 				62F265F12AD104A900D0C74B /* Format+Builder.swift */,
 				62F265F32AD104B200D0C74B /* Platform+Builder.swift */,
@@ -370,8 +435,11 @@
 				1ED158D92AD0B830005CB7D3 /* FormView.swift in Sources */,
 				62F265F42AD104B200D0C74B /* Platform+Builder.swift in Sources */,
 				62F265FA2AD1071700D0C74B /* UUID+Extension.swift in Sources */,
+				1EA9C42A2AD346AC004FC832 /* InputPropertiesView.swift in Sources */,
 				1ED158F82AD0C465005CB7D3 /* Digital+Enum.swift in Sources */,
 				1ED158B82AD09A85005CB7D3 /* Persistence.swift in Sources */,
+				1EA9C4352AD350E5004FC832 /* FormatCollection+Extension.swift in Sources */,
+				1EA9C4392AD36C26004FC832 /* ModeCollection+Extension.swift in Sources */,
 				1ED158D72AD0B7CF005CB7D3 /* IconView.swift in Sources */,
 				1ED159022AD0C89D005CB7D3 /* Family+Enum.swift in Sources */,
 				62F265F02AD104A100D0C74B /* Input+Builder.swift in Sources */,
@@ -380,17 +448,22 @@
 				1E7B46E52AD1E8600012AB85 /* GameListView.swift in Sources */,
 				1E7B46DC2AD1D81A0012AB85 /* Entity+Enum.swift in Sources */,
 				1ED158EF2AD0C13B005CB7D3 /* Game+Class.swift in Sources */,
+				1EA9C4312AD349C2004FC832 /* StringCollection+Extension.swift in Sources */,
 				62F266022AD12C2200D0C74B /* Property+Enum.swift in Sources */,
 				1ED158DB2AD0B846005CB7D3 /* Date+Extension.swift in Sources */,
 				1ED159042AD0C8A5005CB7D3 /* Nintendo+Enum.swift in Sources */,
 				1ED1590A2AD0C8BD005CB7D3 /* Xbox+Enum.swift in Sources */,
 				1ED158CF2AD0B781005CB7D3 /* View+Extension.swift in Sources */,
 				1ED158D22AD0B79B005CB7D3 /* Hide+Modifier.swift in Sources */,
+				1EA9C4212AD32412004FC832 /* Property+Builder.swift in Sources */,
 				1ED158C32AD09B37005CB7D3 /* Context+Extension.swift in Sources */,
 				1ED159062AD0C8AB005CB7D3 /* PC+Enum.swift in Sources */,
 				62F265F62AD104B900D0C74B /* Mode+Builder.swift in Sources */,
 				1ED158E42AD0C068005CB7D3 /* autosavedComplete.xcdatamodeld in Sources */,
+				1EA9C41C2AD30432004FC832 /* GameDetailView.swift in Sources */,
 				1ED158ED2AD0C13B005CB7D3 /* Relation+Class.swift in Sources */,
+				1EA9C41E2AD305F5004FC832 /* Collection+Protocol.swift in Sources */,
+				1EA9C42F2AD34869004FC832 /* InputCollection+Extension.swift in Sources */,
 				1ED158E12AD0BC07005CB7D3 /* Format+Enum.swift in Sources */,
 				1ED158CB2AD0B59B005CB7D3 /* Identifiable+Protocol.swift in Sources */,
 				1ED158DF2AD0BBBA005CB7D3 /* Mode+Enum.swift in Sources */,
@@ -398,6 +471,9 @@
 				1ED158B12AD09A83005CB7D3 /* ContentView.swift in Sources */,
 				1ED158DD2AD0BB89005CB7D3 /* Input+Enum.swift in Sources */,
 				1ED158FA2AD0C46B005CB7D3 /* Physical+Enum.swift in Sources */,
+				1EA9C4162AD2EC0B004FC832 /* Property+Collection.swift in Sources */,
+				1EA9C4262AD34588004FC832 /* AddInputPropertyView.swift in Sources */,
+				1EA9C4332AD34FA2004FC832 /* PlatformCollection+Extension.swift in Sources */,
 				1ED158AF2AD09A83005CB7D3 /* autosavedCompleteApp.swift in Sources */,
 				1ED158F42AD0C44B005CB7D3 /* Format+Protocol.swift in Sources */,
 				1ED158F62AD0C45C005CB7D3 /* Form+Enum.swift in Sources */,

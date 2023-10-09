@@ -20,15 +20,6 @@ public final class Property: NSManagedObject {
         .init(self.identity_uuid)
     }
     
-    public var builder: PropertyBuilder {
-        switch self.primaryEnum {
-        case .format: return FormatBuilder(self)
-        case .input: return InputBuilder(self)
-        case .mode: return ModeBuilder(self)
-        case .platform: return PlatformBuilder(self)
-        }
-    }
-    
 }
 
 extension Property {

@@ -19,16 +19,16 @@ struct PersistenceController {
         }
     }
     
-    static var propertyBuilders: [PropertyBuilder] {
-        [
-            InputBuilder(.series, "Grand Theft Auto"),
-            ModeBuilder(.single),
-            FormatBuilder(.digital(.nintendo)),
-            FormatBuilder(.physical(.cartridge)),
-            PlatformBuilder(.playstation(.ps3)),
-            PlatformBuilder(.pc(.mac))
-        ]
-    }
+//    static var propertyBuilders: [PropertyBuilder] {
+//        [
+//            InputBuilder(.series, "Grand Theft Auto"),
+//            ModeBuilder(.single),
+//            FormatBuilder(.digital(.nintendo)),
+//            FormatBuilder(.physical(.cartridge)),
+//            PlatformBuilder(.playstation(.ps3)),
+//            PlatformBuilder(.pc(.mac))
+//        ]
+//    }
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)

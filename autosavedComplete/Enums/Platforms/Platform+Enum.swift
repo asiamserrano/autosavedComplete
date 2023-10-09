@@ -114,6 +114,6 @@ extension PlatformEnum: PropertyProtocol {
     }
     
     public var physical: FormatEnum { .physical(self.child.physicalFormat) }
-    public var digital: [FormatEnum] { self.child.digitalFormats.map (FormatEnum.digital) }
+    public var digital: FormatCollection { self.child.digitalFormats.map (FormatEnum.digital) }
     
 }

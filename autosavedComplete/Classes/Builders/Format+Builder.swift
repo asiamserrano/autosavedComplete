@@ -16,7 +16,7 @@ public struct FormatBuilder: BuilderProtocol {
     }
 
     public private (set) var identity: UUID
-    private var formatEnum: FormatEnum
+    public private (set) var formatEnum: FormatEnum
     
     public init(_ f: FormatEnum) {
         self.identity = .init()

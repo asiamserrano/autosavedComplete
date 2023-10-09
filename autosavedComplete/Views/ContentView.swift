@@ -10,6 +10,15 @@ import CoreData
 
 struct ContentView: View {
     
+    
+    /*
+     TODO: Next steps:
+     1. equating for view update/change
+     2. add in game builder views
+     3. do all testing for adding, editing, deleting 
+     
+     */
+    
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest( sortDescriptors: [])

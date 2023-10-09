@@ -19,8 +19,8 @@ public struct InputBuilder: BuilderProtocol {
 
     public private (set) var identity: UUID
     
-    private var inputEnum: InputEnum
-    private var display: String
+    public private (set) var inputEnum: InputEnum
+    public private (set) var display: String
     
     public init(_ i: InputEnum, _ s: String) {
         self.identity = .init()

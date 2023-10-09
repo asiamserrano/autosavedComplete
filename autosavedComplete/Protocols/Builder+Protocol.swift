@@ -7,7 +7,9 @@
 
 import Foundation
 
-public typealias PropertyBuilder = any BuilderProtocol
+//public typealias PropertyBuilder = any BuilderProtocol
+
+public typealias anyBuilder = any BuilderProtocol
 
 public protocol BuilderProtocol: PropertyProtocol {
     
@@ -21,6 +23,17 @@ public protocol BuilderProtocol: PropertyProtocol {
 }
 
 extension BuilderProtocol {
+    
+//    public init?(_ en: PropertyEnum) {
+//        self.init(self.primaryEnum, en)
+//    }
+//    
+//    public init?(_ p: PrimaryEnum, _ en: PropertyEnum) {
+//        let builder: PropertyBuilder? = p == .format ? en.builders.1 : en.builders.0
+//        if let myself: Self = builder as? Self {
+//            self.init(myself)
+//        } else { return nil }
+//    }
         
     public var primaryEnum: PrimaryEnum { Self.primaryEnum }
     

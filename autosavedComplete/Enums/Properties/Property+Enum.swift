@@ -24,15 +24,25 @@ extension Array where Element == PropertyEnum {
 
 // MARK: - Class Definition
 
-public typealias PropertyTuple = (PropertyBuilder, PropertyBuilder?)
-
-public enum PropertyEnum: IdentifiableProtocol {
+public enum PropertyEnum: PropertiesProtocol {
+    
+    public static func input(_ i: InputEnum, _ s: String) -> Self {
+        .input(InputBuilder(i, s))
+    }
+    
+    public static func mode(_ m: ModeEnum) -> Self {
+        .mode(ModeBuilder(m))
+    }
+    
+    public static func platform(_ p: PlatformEnum, _ f: FormatEnum) -> Self {
+        .platform(PlatformBuilder(p), FormatBuilder(f))
+    }
     
     case input(InputBuilder)
     case mode(ModeBuilder)
     case platform(PlatformBuilder, FormatBuilder)
     
-    private var builders: PropertyTuple {
+    private var builders: (PropertyBuilder, PropertyBuilder?) {
         switch self {
         case .input(let i): return (.forInputBuilder(i), nil)
         case .mode(let m): return (.forModeBuilder(m), nil)
@@ -40,11 +50,11 @@ public enum PropertyEnum: IdentifiableProtocol {
         }
     }
     
-    public var primaryEnum: PrimaryEnum? {
+    public var propertiesEnum: PropertiesEnum {
         switch self {
         case .input(_): return .input
         case .mode(_): return .mode
-        case .platform(_, _): return nil
+        case .platform(_, _): return .platform
         }
     }
     

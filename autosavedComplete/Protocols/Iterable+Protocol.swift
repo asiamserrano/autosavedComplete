@@ -7,19 +7,19 @@
 
 import Foundation
 
-extension Array where Element: IterableProtocol {
-    
-    public func getValues() -> Self { self.sorted() }
-    
-    public func remove(_ index: Int) -> Self {
-        self.filter { $0 != self.getValues()[index] }
-    }
-    
-    public func equals(_ other: Self) -> Bool {
-        self.getValues() == other.getValues()
-    }
-    
-}
+//extension Collection where Element: IterableProtocol {
+//    
+//    public func getValues() -> [Element] { self.sorted() }
+//    
+//    public func remove(_ index: Int) -> Self {
+//        self.filter { $0 != self.getValues()[index] }
+//    }
+//    
+//    public func equals(_ other: Self) -> Bool {
+//        self.getValues() == other.getValues()
+//    }
+//    
+//}
 
 public protocol IterableProtocol: IdentifiableProtocol, CaseIterable, Comparable {
 

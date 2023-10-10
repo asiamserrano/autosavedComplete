@@ -13,7 +13,6 @@ struct GameDetailView: GameModifiableProtocol {
     @Environment(\.presentationMode) public var presentationMode
     
     @StateObject var collection: PropertyCollection = .init()
-//    @StateObject var alertObj: AlertObject = .init()
 
     @State var editMode: EditMode
     @State var title: String

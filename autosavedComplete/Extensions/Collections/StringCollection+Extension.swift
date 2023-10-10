@@ -19,18 +19,16 @@ extension StringCollection {
     
     public func removeString(_ index: Int) -> Self {
         var new: Self = self
-        new[self.getKeys()[index]] = nil
+        new[self.getValues()[index]] = nil
         return new
     }
     
-    public func getKeys() -> [Key] { self.keys.sorted() }
+//    public func getKeys() -> [Key] { self.keys.sorted() }
 
     public func getValues() -> [String] { self.values.sorted() }
     
-    public func equals(_ other: Self) -> Bool {
-        self.getKeys() == other.getKeys()
-    }
-        
-    var isEmpty: Bool { self.getKeys().isEmpty }
+//    public func equals(_ other: Self) -> Bool {
+//        self.getValues() == other.getValues()
+//    }
     
 }

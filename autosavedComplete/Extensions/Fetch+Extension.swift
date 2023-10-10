@@ -1,5 +1,5 @@
 //
-//  Predicate+Extension.swift
+//  Fetch+Extension.swift
 //  autosavedComplete
 //
 //  Created by Asia Michelle Serrano on 10/6/23.
@@ -8,10 +8,16 @@
 import Foundation
 import CoreData
 
-public enum PredicateEnum: String {
-    case equal = "=="
-    case begin = "BEGINSWITH"
-    case contain = "CONTAINS"
+extension NSSortDescriptor {
+    
+    public static func buildForProperty(_ v: Property.Variable, _ dir: Bool) -> Self {
+        self.init(key: v.rawValue, ascending: dir)
+    }
+    
+    public static func buildForGame(_ v: Game.Variable, _ dir: Bool) -> Self {
+        self.init(key: v.rawValue, ascending: dir)
+    }
+    
 }
 
 extension NSCompoundPredicate {

@@ -33,7 +33,7 @@ extension GameModifiableProtocol {
     var adding: Bool { self.old == nil }
     
     var series: String? {
-        self.collection.getValues(.series).first
+        self.collection.getInputs(.series).first
     }
     
     var inputEnums: [InputEnum] {

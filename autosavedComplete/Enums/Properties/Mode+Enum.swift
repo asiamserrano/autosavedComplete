@@ -19,4 +19,6 @@ public enum ModeEnum: IterableProtocol {
          }
      }
     
+    public var keyEnum: KeyEnum { .mode }
+    
 }

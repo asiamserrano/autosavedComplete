@@ -7,13 +7,33 @@
 
 import Foundation
 
-public protocol PropertyProtocol: IdentifiableProtocol {
+public protocol PropertiesProtocol: IdentifiableProtocol {
+    
+    var propertiesEnum: PropertiesEnum { get }
+            
+}
+
+public protocol PropertyProtocol: PropertiesProtocol {
     
     var primaryEnum: PrimaryEnum { get }
     
     func get(_ v: Property.Variable) -> String?
         
 }
+
+public extension PropertyProtocol {
+    
+    var propertiesEnum: PropertiesEnum {
+        switch self.primaryEnum {
+        case .input: return .input
+        case .mode: return .mode
+        default: return .platform
+        }
+    }
+    
+}
+
+
 
 //public protocol PropertyProtocol: IdentifiableProtocol {
 //

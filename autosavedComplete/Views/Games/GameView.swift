@@ -33,12 +33,13 @@ struct GameView: View {
         self.init(game, status, predicate)
     }
     
-    public var properties: [PropertyEnum] {
-        self.viewContext.getPropertiesByRelations(self.relations)
-    }
+//    public var properties: [PropertyEnum] {
+//        self.viewContext.getPropertiesByRelations(self.relations)
+//    }
 
     var body: some View {
-        GameDetailView(self.old, self.status, self.properties)
+        DummyTestView(relations: self.relations)
+//        GameDetailView(self.old, self.status, self.properties)
 //        Form {
 //            
 //            

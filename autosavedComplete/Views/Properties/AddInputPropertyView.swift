@@ -10,7 +10,8 @@ import SwiftUI
 struct AddInputPropertyView: PropertyModifiableProtocol {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var viewDismiss
+//    @Environment(\.presentationMode) var presentationMode
     
     //    @EnvironmentObject var viewObject: ViewObject
     
@@ -28,7 +29,7 @@ struct AddInputPropertyView: PropertyModifiableProtocol {
         self.inputEnum = i
         self.collection = c
         
-        if i == .series, let val: String = c.getValues(.series).first {
+        if i == .series, let val: String = c.getInputs(.series).first {
             self._selected = .init(wrappedValue: val)
         }
     }
@@ -102,7 +103,8 @@ struct AddInputPropertyView: PropertyModifiableProtocol {
     }
     
     private func close(_ bool: Bool) -> Void {
-        if bool { self.presentationMode.wrappedValue.dismiss() }
+        if bool { self.viewDismiss() }
+//        if bool { self.presentationMode.wrappedValue.dismiss() }
     }
     
 }

@@ -49,6 +49,11 @@ extension Relation : Identifiable {
         }
     }
     
+    public var predicateForProperties: [NSPredicate] {
+        [ self.get(.primary), self.get(.secondary) ]
+            .filter { $0 != nil }.map { .init(.identity, $0!, .equal) }
+    }
+    
 //    public var properties: (UUID?, UUID?) {
 //        (self.get(.primary), self.get(.secondary))
 //    }

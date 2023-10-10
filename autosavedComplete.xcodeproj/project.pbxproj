@@ -249,8 +249,8 @@
 		1ED158AD2AD09A83005CB7D3 /* autosavedComplete */ = {
 			isa = PBXGroup;
 			children = (
-				1ED158F22AD0C23A005CB7D3 /* Classes */,
 				1ED158AE2AD09A83005CB7D3 /* autosavedCompleteApp.swift */,
+				1ED158F22AD0C23A005CB7D3 /* Classes */,
 				1ED158E52AD0C07F005CB7D3 /* CoreData */,
 				1ED158C62AD0B570005CB7D3 /* Enums */,
 				1ED158C12AD09B2E005CB7D3 /* Extensions */,
